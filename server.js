@@ -1,5 +1,6 @@
 const express=require('express')
 const app= express()
+require("dotenv").config()
 const socketio = require('socket.io')
 const cors=require('cors')
 const http=require('http')
@@ -25,4 +26,4 @@ io.on('connection', socket => {
   })
 })
 
-io.listen(5000)
+io.listen(process.env.PORT)
